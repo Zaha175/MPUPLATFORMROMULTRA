@@ -370,6 +370,24 @@
             background-color: #002244;
         }
 
+       .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Seitenverhältnis */
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .video-container iframe,  
+        .video-container object,  
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
         /* Media Queries */
         @media (max-width: 768px) {
             main {
@@ -655,7 +673,13 @@
                 </div>
                 <div class="description" id="header-description">
                     <h3>Bine ai venit pe PLATFORMA MPU</h3>
-                    <p>Apasă pe elementele din meniu, ca să afli mai multe.</p>
+                    <div class="video-container">
+                   <video controls width="100%">
+                  <source src="VIDEOROM.mp4" type="video/mp4">
+                  Dein Browser unterstützt das Video-Tag nicht.
+        </video>
+             </div>
+              <p>Apasă pe elementele din meniu, ca să afli mai multe informații.</p>
                 </div>
                 <div class="description" id="promille-rechner-description">
                     <h3>Calculator de Alcoolemie</h3>
