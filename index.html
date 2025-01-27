@@ -388,6 +388,40 @@
             width: 100%;
             height: 100%;
         }
+
+        /* Module für STRESUL und ARBORUL MPU */
+        .module {
+            background-color: rgba(0, 0, 50, 0.8);
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #FFD700; /* Dunkelgelbe Schrift */
+           display: flex; /* Flexbox für Zentrierung */
+            justify-content: center; /* Horizontal zentrieren */
+            align-items: center; /* Vertikal zentrieren */
+            cursor: pointer;
+            transition: transform 0.2s;
+           width: 200px; /* Optional: Feste Breite */
+           height: 60px; /* Macht die Buttons länger */
+    }
+
+        .module:hover {
+            transform: scale(1.1);
+        }
+
+        .module-bottom-left {
+            position: fixed;
+            bottom: 50px;
+            left: 20px;
+        }
+
+        .module-bottom-right {
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+        }
+
         /* Media Queries */
         @media (max-width: 768px) {
             main {
@@ -448,8 +482,20 @@
                 <div class="menu-item" onclick="openModal('ki-assistent')">ASISTENTUL KI</div>
             </div>
 
+            <!-- Module für STRESUL und ARBORUL MPU -->
+            <div class="module module-bottom-left" onclick="openModal('stresul')">STRESUL</div>
+            <div class="module module-bottom-right" onclick="openModal('arborul-mpu')">ARBORUL MPU</div>
+
             <div class="content-container">
-                <div class="description" id="ablauf-description">
+                <div class="description" id="stresul-description">
+                    <h3>Modul STRESUL</h3>
+                    <p>Hier kommt der Inhalt für das Modul STRESUL...</p>
+                </div>
+                <div class="description" id="arborul-mpu-description">
+                    <h3>Modul ARBORUL MPU</h3>
+                    <p>Hier kommt der Inhalt für das Modul ARBORUL MPU...</p>
+                </div>
+          <div class="description" id="ablauf-description">
                     <h3>PROCESUL MPU</h3>
                    <iframe src="https://www.youtube.com/embed/srj4xbp3P8s?si=O4C-E0o8BKBcUji6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <ul>
