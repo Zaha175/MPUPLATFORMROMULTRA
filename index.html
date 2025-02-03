@@ -435,12 +435,15 @@
             left: 20px;
         }
 
+        /* Module in der rechten unteren Ecke – HOST oben, ARBORUL unten */
         .module-bottom-right {
             position: fixed;
             bottom: 50px;
             right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-
         /* Media Queries */
         @media (max-width: 768px) {
             main {
@@ -467,7 +470,8 @@
             iframe {
                 height: 300px;
             }
-        }
+  
+       }
     </style>
 </head>
 
@@ -503,7 +507,10 @@
 
             <!-- Module für STRESUL und ARBORUL MPU -->
             <div class="module module-bottom-left" onclick="openModal('stresul')">STRESUL</div>
-            <div class="module module-bottom-right" onclick="openModal('arborul-mpu')">ARBORUL</div>
+           <div class="module module-bottom-right">
+                <div onclick="openModal('host')">HOST</div>
+                <div onclick="openModal('arborul-mpu')">ARBORUL</div>
+            </div>
 
             <div class="content-container">
                 <div class="description" id="stresul-description">
@@ -525,9 +532,6 @@
                 <div class="description" id="arborul-mpu-description">
                     <h3>Modul ARBORUL MPU</h3>
                     <p>ARBORUL...</p>
-                    <button class="button" onclick="window.open('https://zaha175.github.io/CUBHOSTZENTRALE/', '_blank')">DESCHIDE HOSTCUB <i class="fas fa-external-link-alt"></i></button>
-                    <iframe src="https://zaha175.github.io/CUBHOSTZENTRALE/"></iframe>
-                    <p>
                     <p>
                     <button class="button" onclick="window.open('https://zaha175.github.io/ARBORE/', '_blank')">DESCHIDE ARBORUL <i class="fas fa-external-link-alt"></i></button>
                     <iframe src="https://zaha175.github.io/ARBORE/"></iframe>
@@ -543,7 +547,13 @@
               <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
                </a>
                </div>
-          <div class="description" id="ablauf-description">
+                 <div class="description" id="host-description">
+                    <h3>Modul HOST MPU</h3>
+                    <p>HOST...</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/HOSTCUB/', '_blank')">DESCHIDE HOSTCUB <i class="fas fa-external-link-alt"></i></button>
+                    <iframe src="https://zaha175.github.io/HOSTCUB/"></iframe>
+                </div>
+     <div class="description" id="ablauf-description">
                     <h3>PROCESUL MPU</h3>
                    <iframe src="https://www.youtube.com/embed/srj4xbp3P8s?si=O4C-E0o8BKBcUji6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <ul>
