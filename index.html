@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,6 @@
             min-height: 100vh;
             position: relative;
         }
-
         body::before {
             content: "";
             position: fixed;
@@ -36,16 +34,13 @@
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
         }
-
         body.dark-mode {
             background-color: #121212;
             color: #e0e0e0;
         }
-
         body.dark-mode::before {
             opacity: 0.3;
         }
-
         /* Container für die gesamte Seite */
         .container {
             width: 90%;
@@ -55,8 +50,7 @@
             display: flex;
             flex-direction: column;
         }
-
-       header {
+        header {
             background-color: #003366;
             color: #ffd700; /* Gelb */
             padding: 20px;
@@ -68,11 +62,9 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             transition: background-color 0.3s, color 0.3s;
         }
-
         body.dark-mode header {
             background-color: #1a1a1a;
         }
-
         main {
             display: flex;
             flex-direction: column;
@@ -80,66 +72,46 @@
             padding: 20px;
             flex-grow: 1;
         }
-
-        /* Zentrierte Karten mit Hover-Effekten */
+        /* Menü-Kacheln */
         .menu-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
         }
-
-         .menu-item {
-    padding: 10px;
-    background-color: #003366;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s;
-    width: calc(25% - 10px);
-    box-sizing: border-box;
-    text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 4px solid #002244;
-   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-}
-/* 3D Effekt für alle Buttons */
-           .button, .module, #chatbot-toggle, #send-btn, .modal-close, .menu-item, a.button-link {
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        .menu-item {
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s;
+            width: calc(25% - 10px);
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-bottom: 4px solid #002244;
-            transition: transform 0.2s ease, box-shadow 0.3s;
         }
-
-           .button:hover, .module:hover, #chatbot-toggle:hover, #send-btn:hover, .modal-close:hover, .menu-item:hover, a.button-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-        }
-
-
         .menu-item:hover {
             background-color: #0055a5;
             transform: scale(1.05);
         }
-
-        /* Media Queries für kleinere Bildschirme */
         @media (max-width: 768px) {
             .menu-item {
-                width: calc(50% - 20px/2*1);
+                width: calc(50% - 10px);
             }
         }
-
         @media (max-width: 480px) {
             .menu-item {
                 width: 100%;
             }
         }
-
         /* Inhaltscontainer */
         .content-container {
             flex-grow: 1;
@@ -148,7 +120,6 @@
             align-items: center;
             width: 100%;
         }
-
         .description {
             background-color: #ffffcc;
             padding: 20px;
@@ -162,17 +133,14 @@
             box-sizing: border-box;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-
         body.dark-mode .description {
             background: #1e1e1e;
             border-color: #444;
             color: #e0e0e0;
         }
-
         .description.active {
             display: block;
         }
-
         /* Dark-Mode-Toggle */
         .dark-mode-toggle {
             position: fixed;
@@ -187,47 +155,68 @@
             transition: background-color 0.3s;
             text-transform: uppercase;
         }
-
         body.dark-mode .dark-mode-toggle {
             background-color: #1a1a1a;
         }
-
         .dark-mode-toggle:hover {
             background-color: #23272b;
             color: #FFD700;
             transform: scale(1.1);
         }
-
-        /* Buttons */
-        .button {
-            width: 90%;
-            max-width: 550px;
-            padding: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border: none;
-            background-color: #003366;
-            color: white;
-            border-radius: 10px;
+        /* Westworld‑Look für alle Buttons */
+        .button, .module, #chatbot-toggle, #send-btn, .modal-close, a.button-link {
+            background: #000;
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 5px #00ffff;
+            padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #00ffff;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+        }
+        .button:hover, .module:hover, #chatbot-toggle:hover, #send-btn:hover, .modal-close:hover, a.button-link:hover {
+            background: #00ffff;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00ffff;
+        }
+        /* Spezifisch für .button – Breite und Layout */
+        .button {
+            width: 90%;
+            max-width: 550px;
+            font-size: 1.2rem;
+            font-weight: bold;
             margin: 10px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
-
-        .button:hover {
-            background-color: #0055a5;
+        /* Module (andere Buttons) mit eigenem Westworld-Stil */
+        .module {
+            background: #000;
+            border: 2px solid #00ffff;
+            color: #FFD700;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            width: 200px;
+            height: 60px;
+            box-shadow: 0 0 10px #FFD700;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .module:hover {
             transform: scale(1.1);
+            box-shadow: 0 0 15px #FFD700;
         }
-
-        .button i {
-            font-size: 1rem;
-        }
-
         /* Iframes */
         iframe {
             width: 100%;
@@ -237,7 +226,6 @@
             border: none;
             overflow: hidden;
         }
-
         /* Chatbot Widget */
         #chatbot-widget {
             position: fixed;
@@ -245,7 +233,6 @@
             right: 20px;
             z-index: 9999;
         }
-
         #chatbot-toggle {
             background-color: #003366;
             color: #fff;
@@ -257,12 +244,10 @@
             font-size: 14px;
             transition: background-color 0.3s, transform 0.2s;
         }
-
         #chatbot-toggle:hover {
             background-color: #002244;
             transform: scale(1.1);
         }
-
         #chatbot-container {
             display: none;
             flex-direction: column;
@@ -280,14 +265,12 @@
             z-index: 9999;
             overflow: hidden;
         }
-
         #chatbot-container iframe {
             width: 100%;
             height: 100%;
             border: none;
             border-radius: 10px;
         }
-
         #chat-response {
             width: 100%;
             height: 300px;
@@ -299,7 +282,6 @@
             background: #fff;
             color: #333;
         }
-
         #chat-input {
             width: 100%;
             padding: 10px;
@@ -307,7 +289,6 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
         #send-btn {
             width: 100%;
             padding: 10px;
@@ -318,13 +299,10 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         #send-btn:hover {
             background-color: #002244;
         }
-
-        /* Modal-Fenster */
-         .modal {
+     .modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -339,17 +317,13 @@
     padding: 10px;     /* Mehr Innenabstand für den Inhalt */
     overflow-y: auto;
     max-height: 90vh;  /* Höher gemacht (90% der Bildschirmhöhe) */
-       }
-
+         }
         body.dark-mode .modal {
             background-color: #301934;
         }
-
         .modal.active {
             display: block;
         }
-
-        /* Hintergrund-Overlay für Modals */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -360,17 +334,14 @@
             z-index: 999;
             display: none;
         }
-
         .modal-overlay.active {
             display: block;
         }
-
         .supplement-info img {
             max-width: 100%;
             height: auto;
             margin-top: 10px;
         }
-
         .modal-close {
             position: absolute;
             top: 10px;
@@ -384,20 +355,17 @@
             font-size: 1rem;
             transition: background-color 0.3s ease;
         }
-
         .modal-close:hover {
             background-color: #002244;
         }
-
-       .video-container {
+        .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Seitenverhältnis */
+            padding-bottom: 56.25%;
             padding-top: 30px;
             height: 0;
             overflow: hidden;
             margin-bottom: 15px;
         }
-
         .video-container iframe,  
         .video-container object,  
         .video-container embed {
@@ -407,34 +375,35 @@
             width: 100%;
             height: 100%;
         }
-
-        /* Module für STRESUL und ARBORUL MPU */
+        /* Module für STRESUL, HOST und ARBORUL MPU */
         .module {
-            background-color: rgba(0, 0, 50, 0.8);
+            /* Westworld-Style für Module */
+            background: #000;
+            border: 2px solid #00ffff;
+            color: #FFD700;
             padding: 10px 20px;
             margin: 10px;
             border-radius: 5px;
             text-align: center;
-            color: #FFD700; /* Dunkelgelbe Schrift */
-           display: flex; /* Flexbox für Zentrierung */
-            justify-content: center; /* Horizontal zentrieren */
-            align-items: center; /* Vertikal zentrieren */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            transition: transform 0.2s;
-           width: 200px; /* Optional: Feste Breite */
-           height: 60px; /* Macht die Buttons länger */
-    }
-
+            transition: transform 0.2s, box-shadow 0.3s;
+            width: 200px;
+            height: 60px;
+            box-shadow: 0 0 10px #FFD700;
+            font-family: 'Orbitron', sans-serif;
+        }
         .module:hover {
             transform: scale(1.1);
+            box-shadow: 0 0 15px #FFD700;
         }
-
         .module-bottom-left {
             position: fixed;
             bottom: 50px;
             left: 20px;
         }
-
         /* Module in der rechten unteren Ecke – HOST oben, ARBORUL unten */
         .module-bottom-right {
             position: fixed;
@@ -444,41 +413,41 @@
             flex-direction: column;
             gap: 10px;
         }
-        /* Media Queries */
-        @media (max-width: 768px) {
-            main {
-                flex-direction: column;
-            }
+    .button-small {
+    padding: 5px 10px;      /* Kleinere Innenabstände */
+    font-size: 0.8rem;      /* Kleinere Schriftgröße */
+    width: auto;            /* Automatische Breite (statt 90% oder max-width) */
+    margin: 5px;            /* Geringerer Außenabstand */
+    border-radius: 5px;     /* Optional: Kleinere Ecken */
+}
 
-            .menu-container {
-                width: 100%;
-            }
+#cube-container {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column; /* Wieder auf column setzen */
+  align-items: center;
+}
 
-            .content-container {
-                padding: 10px;
-                align-items: stretch;
-            }
-
-            .description {
-                width: 100%;
-            }
-
-            .button-container {
-                max-width: 100%;
-            }
-
-            iframe {
-                height: 300px;
-            }
-  
-       }
-    </style>
+#cube-container button {
+  margin-bottom: 0; /* Kein Abstand nach unten */
+  margin-top: 5px;  /* Abstand nach oben, damit der Button über dem Würfel erscheint */
+}
+</style>
 </head>
 
 <body>
-
     <header>PLATFORMA MPU ULTRA</header>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">MOD ÎNTUNECAT</button>
+   <!-- Würfel-Container oben links -->
+ <div id="cube-container">
+        <button class="button button-small" onclick="window.open('https://zaha175.github.io/PUZZLEBILDMINCU/', '_blank')">
+            CUB <i class="fas fa-external-link-alt"></i>
+        </button>
+        <iframe src="https://zaha175.github.io/PUZZLEBILDMINCU/" style="width: 145px; height: 80px; border: none;"></iframe>
+    </div>
+   <button class="dark-mode-toggle" onclick="toggleDarkMode()">MOD ÎNTUNECAT</button>
 
     <div id="chatbot-widget">
         <button id="chatbot-toggle">🤖 Pornire Chatbot</button>
@@ -502,85 +471,78 @@
                 <div class="menu-item" onclick="openModal('gutachtersimulator')">MPU SIMULATOR</div>
                 <div class="menu-item" onclick="openModal('checkliste')">LISTĂ DE VERIFICARE MPU</div>
                 <div class="menu-item" onclick="openModal('frageboegen')">CHESTIONARE MPU</div>
+                <div class="menu-item" onclick="openModal('examen')">EXAMEN</div> 
                 <div class="menu-item" onclick="openModal('ki-assistent')">ASISTENTUL KI</div>
             </div>
 
-            <!-- Module für STRESUL und ARBORUL MPU -->
+            <!-- Module für STRESUL, HOST und ARBORUL MPU -->
             <div class="module module-bottom-left" onclick="openModal('stresul')">STRESUL</div>
-           <div class="module module-bottom-right">
-                <div onclick="openModal('host')">HOST</div>
-                <div onclick="openModal('arborul-mpu')">ARBORUL</div>
+            <div class="module module-bottom-right"><div onclick="openModal('arborul-mpu')">ARBORUL</div>
             </div>
 
             <div class="content-container">
+                <!-- Beschreibungscontainer für die Module -->
                 <div class="description" id="stresul-description">
                     <h3>Modul STRESUL</h3>
-              <p>
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/to3sXYg89mk?si=LpNyjViFlU0huCCf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-             <p>
-            <button class="button" onclick="window.open('https://gamma.app/docs/Stresul-913640ahfrawy61', '_blank')">DESCHIDE STRESUL <i class="fas fa-external-link-alt"></i></button>
-             </a>
-                <a href="https://gamma.app/docs/Stresul-913640ahfrawy61" target="_blank">
-                <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/IP6K8fe6TYfxaIQqlFCTu.jpg" alt="Alternativtext" style="width: 300px; height: auto;">
-               </a>
-               <p>
-               </a>
-              <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
-              <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
-               </a>
-             </div>
+                    <p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/to3sXYg89mk?si=LpNyjViFlU0huCCf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </p>
+                    <button class="button" onclick="window.open('https://gamma.app/docs/Stresul-913640ahfrawy61', '_blank')">DESCHIDE STRESUL <i class="fas fa-external-link-alt"></i></button>
+                    <a href="https://gamma.app/docs/Stresul-913640ahfrawy61" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/IP6K8fe6TYfxaIQqlFCTu.jpg" alt="Alternativtext" style="width: 300px; height: auto;">
+                    </a>
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
+                </div>
                 <div class="description" id="arborul-mpu-description">
                     <h3>Modul ARBORUL MPU</h3>
                     <p>ARBORUL...</p>
-                    <p>
                     <button class="button" onclick="window.open('https://zaha175.github.io/ARBORE/', '_blank')">DESCHIDE ARBORUL <i class="fas fa-external-link-alt"></i></button>
                     <iframe src="https://zaha175.github.io/ARBORE/"></iframe>
-                    <p>
                     <button class="button" onclick="window.open('https://zaha175.github.io/SITUATIIRISCANTEAPP/', '_blank')">DESCHIDE SITUATII RISCANTE APP <i class="fas fa-external-link-alt"></i></button>
                     <iframe src="https://zaha175.github.io/SITUATIIRISCANTEAPP/"></iframe>
-                    <p>
-                   <button class="button" onclick="window.open('https://zaha175.github.io/MPUIMPORTANTULTRA/', '_blank')">DESCHIDE MPU IMPORTANT <i class="fas fa-external-link-alt"></i></button>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/MPUIMPORTANTULTRA/', '_blank')">DESCHIDE MPU IMPORTANT <i class="fas fa-external-link-alt"></i></button>
                     <iframe src="https://zaha175.github.io/MPUIMPORTANTULTRA/"></iframe>
-                    <p>
-               </a>
-                <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
-              <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
-               </a>
-               </div>
-                 <div class="description" id="host-description">
-                    <h3>Modul HOST MPU</h3>
-                    <p>HOST...</p>
-                    <button class="button" onclick="window.open('https://zaha175.github.io/HOSTCUB/', '_blank')">DESCHIDE HOSTCUB <i class="fas fa-external-link-alt"></i></button>
-                    <iframe src="https://zaha175.github.io/HOSTCUB/"></iframe>
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
                 </div>
-     <div class="description" id="ablauf-description">
+               <div class="description" id="examen-description">
+               <h3>EXAMEN</h3>
+           <p>Pas cu pas către succesul MPU: EXAMEN</p>
+           <button class="button" onclick="window.open('https://zaha175.github.io/PUZZLEBILDMINCU/', '_blank')">ACTIV <i class="fas fa-external-link-alt"></i></button>
+           <iframe src="https://zaha175.github.io/PUZZLEBILDMINCU/"></iframe>
+           <p>
+          <button class="button" onclick="window.open('https://zaha175.github.io/BILDERCOSTINELVIDEO/', '_blank')">ACTIV1 <i class="fas fa-external-link-alt"></i></button>
+           <iframe src="https://zaha175.github.io/BILDERCOSTINELVIDEO/"></iframe>
+           <p>
+           <button class="button" onclick="window.open('https://zaha175.github.io/PANNELCOSTINEL/', '_blank')">DESCHIDE EXAMEN <i class="fas fa-external-link-alt"></i></button>
+            <iframe src="https://zaha175.github.io/PANNELCOSTINEL/"></iframe>
+           <p>
+           <h3>EXAMEN SIMULATOR</h3>
+           <p>EXAMEN SIMULATOR</p>
+           <button class="button" onclick="window.open('https://chatgpt.com/g/g-67647a1f4a488191940c4b0c92a4f2ea-k-i-kommandant-fur-mpu-abstinenz', '_blank')">EXAMEN SIMULATOR <i class="fas fa-external-link-alt"></i></button>
+          </div>
+                <div class="description" id="ablauf-description">
                     <h3>PROCESUL MPU</h3>
-                   <iframe src="https://www.youtube.com/embed/srj4xbp3P8s?si=O4C-E0o8BKBcUji6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/srj4xbp3P8s?si=O4C-E0o8BKBcUji6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <ul>
                         <p>PROCESUL MPU!</p>
-                        <li>Înregistrare (10 minute), prezentarea dovezilor de abstinență și a certificatului de
-                            pregătire.
-                        </li>
+                        <li>Înregistrare (10 minute), prezentarea dovezilor de abstinență și a certificatului de pregătire.</li>
                         <li>Completarea chestionarelor (30 minute)</li>
                         <li>Examinare medicală (30 minute)</li>
                         <li>Teste de reacție (20 minute)</li>
                         <li>Evaluare psihologică (60 minute)</li>
                     </ul>
-                    <iframe src="https://www.youtube.com/embed/-rDeGHZdois?si=CCdAMZsJohBxcDf5"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    <button class="button"
-                        onclick="window.open('https://chatgpt.com/g/g-675ae9d9e02c819197d84b01adf301ee-mpuassistent', '_blank')">ASISTENT
-                        KI <i class="fas fa-external-link-alt"></i></button>
+                    <iframe src="https://www.youtube.com/embed/-rDeGHZdois?si=CCdAMZsJohBxcDf5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <button class="button" onclick="window.open('https://chatgpt.com/g/g-675ae9d9e02c819197d84b01adf301ee-mpuassistent', '_blank')">ASISTENT KI <i class="fas fa-external-link-alt"></i></button>
                 </div>
                 <div class="description" id="kosten-description">
                     <h3>Costuri MPU: Examinare și Pregătire</h3>
                     <p>Detalii despre costurile MPU și pregătirea necesară le găsești aici.</p>
-                     <iframe src="https://www.youtube.com/embed/lQNObTIqMIQ?si=Mp0JDdWUvYFGblvz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <button class="button"
-                        onclick="window.open('https://chatgpt.com/g/g-675ae9d9e02c819197d84b01adf301ee-mpuassistent', '_blank')">DESCHIDE
-                        ASISTENT KI <i class="fas fa-external-link-alt"></i></button>
+                    <iframe src="https://www.youtube.com/embed/lQNObTIqMIQ?si=Mp0JDdWUvYFGblvz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <button class="button" onclick="window.open('https://chatgpt.com/g/g-675ae9d9e02c819197d84b01adf301ee-mpuassistent', '_blank')">DESCHIDE ASISTENT KI <i class="fas fa-external-link-alt"></i></button>
                 </div>
                 <div class="description" id="leistungstests-description">
                     <h3>Teste de Performanță</h3>
@@ -588,71 +550,167 @@
                     <iframe src="https://www.youtube.com/embed/cHzoFyU0Gb4?si=FcSmnCV1pEDTvT0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <ul>
                         <p>MPU TESTE DE REACȚIE : Pregătire MPU!</p>
-                        <p><button class="button"
-                                onclick="window.open('https://gamma.app/docs/PanicDurataMPUNEU-145vlmugv0jsh2y', '_blank')">ACCESEAZĂ
-                                TESTELE DE REACȚIE <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p>
+                        <button class="button" onclick="window.open('https://gamma.app/docs/PanicDurataMPUNEU-145vlmugv0jsh2y', '_blank')">ACCESEAZĂ TESTELE DE REACȚIE <i class="fas fa-external-link-alt"></i></button>
                         <p>MPU TESTE DE REACȚIE</p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/TestProbeRom/', '_blank')">TEST
-                                SITUAȚII DE TRAFIC1 <i class="fas fa-external-link-alt"></i></button>
-                        <p><button class="button" onclick="window.open('https://zaha175.github.io/PUZZLEBILDAPP/', '_blank')">TEST SITUAȚII DE TRAFIC2 <i class="fas fa-external-link-alt"></i></button><p>
-                        <p>
-                        <p><button class="button" onclick="window.open('https://zaha175.github.io/PUZZLEVERKEHRSBILD3D/', '_blank')">TEST SITUAȚII DE TRAFIC3 <i class="fas fa-external-link-alt"></i></button><p>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/TestProbeRom/', '_blank')">TEST SITUAȚII DE TRAFIC1 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/PUZZLEBILDAPP/', '_blank')">TEST SITUAȚII DE TRAFIC2 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/PUZZLEVERKEHRSBILD3D/', '_blank')">TEST SITUAȚII DE TRAFIC3 <i class="fas fa-external-link-alt"></i></button>
                         <iframe src="https://zaha175.github.io/PUZZLEVERKEHRSBILD3D/"></iframe>
-                        <p>
-                        <p>
                         <p>TESTFIGURI</p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/TESTFIGURI/', '_blank')">TESTFIGURI1
-                                <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/TESTFIGURI1/', '_blank')">TESTFIGURI2
-                                <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/TESTFIGURI2/', '_blank')">TESTFIGURI3
-                                <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/TESTFIGURI/', '_blank')">TESTFIGURI1 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/TESTFIGURI1/', '_blank')">TESTFIGURI2 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/TESTFIGURI2/', '_blank')">TESTFIGURI3 <i class="fas fa-external-link-alt"></i></button>
                         <p>TEST DE COMPARARE A CULORILOR</p>
-                        <p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/FARBENTESTROM1/', '_blank')">TEST
-                                DE CULORI1 <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/FARBENTESTROM2/', '_blank')">TEST
-                                DE CULORI2 <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/FARBENTESTROM3/', '_blank')">TEST
-                                DE CULORI3 <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p>TESTUL FIGURILOR și CULORILOR</p>
-                        <p><button class="button" onclick="window.open('https://zaha175.github.io/FARBFIGURENVERGLEICHSTESTULTRA/', '_blank')">TESTFIGURICULORI1 <i class="fas fa-external-link-alt"></i></button></p>
-                        <p><button class="button" onclick="window.open('https://zaha175.github.io/FARBFIGURENVERGLEICHSTEST3DULTRA/', '_blank')">TESTFIGURICULORI2 <i class="fas fa-external-link-alt"></i></button><p>
-                        <p>  
+                        <button class="button" onclick="window.open('https://zaha175.github.io/FARBENTESTROM1/', '_blank')">TEST DE CULORI1 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/FARBENTESTROM2/', '_blank')">TEST DE CULORI2 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/FARBENTESTROM3/', '_blank')">TEST DE CULORI3 <i class="fas fa-external-link-alt"></i></button>
                         <p>TESTE DE SITUAȚII MULTIPLE</p>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/MERHFACHSITUATIONSTEST/', '_blank')">TEST DE SITUAȚII MULTIPLE1 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/TESTMULTIPLU1/', '_blank')">TEST DE SITUAȚII MULTIPLE2 <i class="fas fa-external-link-alt"></i></button>
+                        <button class="button" onclick="window.open('https://zaha175.github.io/TESTMULTIPLU2/', '_blank')">TEST DE SITUAȚII MULTIPLE3 <i class="fas fa-external-link-alt"></i></button>
+                    </ul>
+                </div>
+                <div class="description" id="frageboegen-description">
+                    <h3>Chestionare MPU</h3>
+                    <p>Exerciții și chestionare pentru MPU.</p>
+                    <button class="button" onclick="window.open('https://gamma.app/docs/Chestionare-MPU-jqrbicoiikh83o2', '_blank')">VEZI CHESTIONARE <i class="fas fa-external-link-alt"></i></button>
+                    <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/QstBoB9fZaPTGSfbm4vm9.jpg" alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
+                </div>
+                <div class="description" id="header-description">
+                    <h3>Bine ai venit pe PLATFORMA MPU</h3>
+                    <div class="video-container">
+                        <video controls width="100%">
+                            <source src="VIDEOROM.mp4" type="video/mp4">
+                            Dein Browser unterstützt das Video-Tag nicht.
+                        </video>
+                    </div>
+                    <p>Apasă pe elementele din meniu, ca să afli mai multe informații.</p>
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
+                </div>
+                <div class="description" id="promille-rechner-description">
+                    <h3>Calculator de Alcoolemie</h3>
+                    <p>Calculator de consum de alcool cu diagramă</p>
+                    <iframe src="https://zaha175.github.io/ALCOOLCONSUMCALC/"></iframe>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/ALCOOLCONSUMCALC/', '_blank')">Calculator de consum de alcool cu diagramă <i class="fas fa-external-link-alt"></i></button>
+                    <p>Calculator de alcoolemie cu diagramă</p>
+                    <iframe src="https://zaha175.github.io/CALCULATORDEALCOOL/"></iframe>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/CALCULATORDEALCOOL/', '_blank')">Calculator de alcoolemie cu diagramă <i class="fas fa-external-link-alt"></i></button>
+                    <p>Calculator de vârstă</p>
+                    <iframe src="https://zaha175.github.io/CALCULATOR-DE-VARSTA/"></iframe>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/CALCULATOR-DE-VARSTA/', '_blank')">Calculator de vârstă <i class="fas fa-external-link-alt"></i></button>
+                </div>
+                <div class="description" id="mpu-qa-description">
+                    h3>MPU-App: Întrebări și Răspunsuri</h3>
+                    <p>Întrebări și răspunsuri pentru pregătirea ta.</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/dDC9Z8uIccE?si=H_2_yidTy-pVtIs6" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <ul>
+                        <p>MPU ÎNTREBĂRI ȘI RĂSPUNSURI : Pregătire MPU!</p>
+                        <p><button class="button"
+                                onclick="window.open('https://zaha175.github.io/ABUZCOSTINEL/', '_blank')">MPU-APP:
+                                ÎNTREBĂRI ȘI RĂSPUNSURI <i class="fas fa-external-link-alt"></i></button>
+                        <p>
                         <p>
                         <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/MERHFACHSITUATIONSTEST/', '_blank')">TEST
-                                DE SITUAȚII MULTIPLE1 <i class="fas fa-external-link-alt"></i></button>
+                                onclick="window.open('https://gamma.app/docs/ABUZROMSTANDARDCOSTINEL-lpf54auaaeu8ptj', '_blank')">ÎNTREBĂRI
+                                ȘI RĂSPUNSURI <i class="fas fa-external-link-alt"></i></button>
                         <p>
+                          <p>
+                         <p><button class="button" onclick="window.open('https://zaha175.github.io/BILDERCOSTINELVIDEO/', '_blank')">DESCHIDE CUBÎNTREBĂRI1 <i class="fas fa-external-link-alt"></i></button><p>
+                         <iframe src="https://zaha175.github.io/BILDERCOSTINELVIDEO/"></iframe>
+                        <p> 
+                        <p>
+                        <p>MPU ÎNTREBĂRI ȘI RĂSPUNSURI : Pregătire MPU!</p>
                         <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/TESTMULTIPLU1/', '_blank')">TEST
-                                DE SITUAȚII MULTIPLE2 <i class="fas fa-external-link-alt"></i></button>
+                                onclick="window.open('https://zaha175.github.io/FRAGENANTWORTENROMCUEXPLICATII/', '_blank')">MPU-APP:
+                                ÎNTREBĂRI ȘI RĂSPUNSURI EXPLICATE <i
+                                    class="fas fa-external-link-alt"></i></button>
                         <p>
+                        <p> <button class="button"
+                                onclick="window.open('https://gamma.app/docs/PANICVIDEOS-wo5zf7m40ilkm42', '_blank')">MPU-VIDEOS:
+                                ÎNTREBĂRI ȘI RĂSPUNSURI EXPLICATE<i class="fas fa-external-link-alt"></i></button>
+                        <p>
+                        <p>
+                        <p><button class="button" onclick="window.open('https://zaha175.github.io/COSTINEL3DBILDER/', '_blank')">DESCHIDE CUBÎNTREBĂRI2 <i class="fas fa-external-link-alt"></i></button><p>
+                        <iframe src="https://zaha175.github.io/COSTINEL3DBILDER/"></iframe>
+                        <p> 
+                        <p>MPU ÎNTREBĂRI ȘI RĂSPUNSURI ALTERNATIV: Pregătire MPU!</p>
                         <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/TESTMULTIPLU2/', '_blank')">TEST
-                                DE SITUAȚII MULTIPLE3<i class="fas fa-external-link-alt"></i></button>
-                        <p>
+                                onclick="window.open('https://zaha175.github.io/MPUINTREBARERASPUNS/', '_blank')">MPU-APP:
+                                ÎNTREBĂRI ȘI RĂSPUNSURI ALTERNATIV <i
+                                    class="fas fa-external-link-alt"></i></button>
                         <p>
                     </ul>
                 </div>
-                <div class="description" id="checkliste-description">
+                <div class="description" id="ki-assistent-description">
+                    <h3>Asistent KI</h3>
+                    <p>Asistentul KI este pregătit să te ajute cu toate întrebările despre MPU.</p>
+                    <button class="button" onclick="window.open('https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom', '_blank')">DESCHIDE ASISTENT KI <i class="fas fa-external-link-alt"></i></button>
+                    <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
+                </div>
+                <div class="description" id="gutachtersimulator-description">
+                    <h3>Simulator MPU</h3>
+                    <p>Simulare a unei discuții MPU.</p>
+                    <button class="button" onclick="window.open('https://chatgpt.com/g/g-6780e4e94a788191bea7bdb6f863695a-asistentdinamiccostinel', '_blank')">DESCHIDE SIMULATOR1 KI <i class="fas fa-external-link-alt"></i></button>
+                    <button class="button" onclick="window.open('https://chatgpt.com/g/g-67647a1f4a488191940c4b0c92a4f2ea-k-i-kommandant-fur-mpu-abstinenz', '_blank')">DESCHIDE SIMULATOR2 KI <i class="fas fa-external-link-alt"></i></button>
+                    <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/ppTJoMZMeGPnTtdZU3_79.jpg" alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
+                    <p>CUM FOLOSEȘTI SIMULATORUL:</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/CHATBOTAIROM/', '_blank')">CUM FOLOSEȘTI SIMULATORUL! <i class="fas fa-external-link-alt"></i></button>
+                    <iframe src="https://zaha175.github.io/CHATBOTAIROM/"></iframe>
+                </div>
+                <div class="description" id="wissen-description">
+                    <h3>MPU QUIZ ȘI JOCURI</h3>
+                    <p>MPU QUIZ : Testează-ți cunoștințele despre MPU.</p>
+                    <p>ÎNCEPE QUIZUL1</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/MPUQUIZCOSTINEL/', '_blank')">ÎNCEPE QUIZUL1 <i class="fas fa-external-link-alt"></i></button>
+                    <p>ÎNCEPE QUIZUL2</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/MPUQUIZRom2/', '_blank')">ÎNCEPE QUIZUL2 <i class="fas fa-external-link-alt"></i></button>
+                    <p>ÎNCEPE QUIZUL3</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/QUIZSUPERTOLLROM/', '_blank')">ÎNCEPE QUIZUL3 <i class="fas fa-external-link-alt"></i></button>
+                    <iframe src="https://zaha175.github.io/QUIZSUPERTOLLROM/"></iframe>
+                    <p>MPU JOCURI : Testează-ți cunoștințele despre MPU.</p>
+                    <p>ÎNCEPE JOCUL1</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/JOC1COSTINEL/', '_blank')">ÎNCEPE JOCUL1 <i class="fas fa-external-link-alt"></i></button>
+                    <p>ÎNCEPE JOCUL2</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/JOC2ROM/', '_blank')">ÎNCEPE JOCUL2 <i class="fas fa-external-link-alt"></i></button>
+                    <iframe src="https://zaha175.github.io/JOC2ROM/"></iframe>
+                    <p>ÎNCEPE JOCUL3</p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/JOC3ROM/', '_blank')">ÎNCEPE JOCUL3 <i class="fas fa-external-link-alt"></i></button>
+                </div>
+                <div class="description" id="frageboegen-description">
+                    <h3>Chestionare MPU</h3>
+                    <p>Exerciții și chestionare pentru MPU.</p>
+                    <button class="button" onclick="window.open('https://gamma.app/docs/Chestionare-MPU-jqrbicoiikh83o2', '_blank')">VEZI CHESTIONARE <i class="fas fa-external-link-alt"></i></button>
+                    <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/QstBoB9fZaPTGSfbm4vm9.jpg" alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
+                </div>
+                <div class="description" id="header-description">
+                    <h3>Bine ai venit pe PLATFORMA MPU</h3>
+                    <div class="video-container">
+                        <video controls width="100%">
+                            <source src="VIDEOROM.mp4" type="video/mp4">
+                            Dein Browser unterstützt das Video-Tag nicht.
+                        </video>
+                    </div>
+                    <p>Apasă pe elementele din meniu, ca să afli mai multe informații.</p>
+                    <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
+                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
+                    </a>
+                </div>
+          <div class="description" id="checkliste-description">
                     <h3>Listă de Verificare MPU</h3>
                     <p>Pas cu pas către succesul MPU: utilizează lista noastră de verificare pentru a rămâne
                         organizat
@@ -667,171 +725,17 @@
                         onclick="window.open('https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom', '_blank')">DESCHIDE
                         ASISTENT KI <i class="fas fa-external-link-alt"></i></button>
                 </div>
-                <div class="description" id="mpu-qa-description">
-                    <h3>MPU-App: Întrebări și Răspunsuri</h3>
-                    <p>Întrebări și răspunsuri pentru pregătirea ta.</p>
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/dDC9Z8uIccE?si=H_2_yidTy-pVtIs6" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <ul>
-                        <p>MPU ÎNTREBĂRI ȘI RĂSPUNSURI : Pregătire MPU!</p>
-                         <p><button class="button" onclick="window.open('https://zaha175.github.io/PANNELPETRUVIDEO/', '_blank')">DESCHIDE ÎNTREBĂRI ȘI RĂSPUNSURI <i class="fas fa-external-link-alt"></i></button><p>
-                        <iframe src="https://zaha175.github.io/PANNELPETRUVIDEO/"></iframe>
-                        <p> 
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/ABUZCOSTINEL/', '_blank')">MPU-APP:
-                                ÎNTREBĂRI ȘI RĂSPUNSURI <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p>
-                        <p><button class="button"
-                                onclick="window.open('https://gamma.app/docs/ABUZROMSTANDARDCOSTINEL-lpf54auaaeu8ptj', '_blank')">ÎNTREBĂRI
-                                ȘI RĂSPUNSURI <i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                          <p>
-                         <p><button class="button" onclick="window.open('https://zaha175.github.io/CUBROM/', '_blank')">DESCHIDE CUBÎNTREBĂRI1 <i class="fas fa-external-link-alt"></i></button><p>
-                         <iframe src="https://zaha175.github.io/CUBROM/"></iframe>
-                        <p> 
-                        <p>
-                        <p>MPU ÎNTREBĂRI ȘI RĂSPUNSURI : Pregătire MPU!</p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/FRAGENANTWORTENROMCUEXPLICATII/', '_blank')">MPU-APP:
-                                ÎNTREBĂRI ȘI RĂSPUNSURI EXPLICATE <i
-                                    class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p> <button class="button"
-                                onclick="window.open('https://gamma.app/docs/PANICVIDEOS-wo5zf7m40ilkm42', '_blank')">MPU-VIDEOS:
-                                ÎNTREBĂRI ȘI RĂSPUNSURI EXPLICATE<i class="fas fa-external-link-alt"></i></button>
-                        <p>
-                        <p>
-                        <p><button class="button" onclick="window.open('https://zaha175.github.io/CUBFRAGENPANNELROM/', '_blank')">DESCHIDE CUBÎNTREBĂRI2 <i class="fas fa-external-link-alt"></i></button><p>
-                        <iframe src="https://zaha175.github.io/CUBFRAGENPANNELROM/"></iframe>
-                        <p> 
-                        <p>MPU ÎNTREBĂRI ȘI RĂSPUNSURI ALTERNATIV: Pregătire MPU!</p>
-                        <p><button class="button"
-                                onclick="window.open('https://zaha175.github.io/MPUINTREBARERASPUNS/', '_blank')">MPU-APP:
-                                ÎNTREBĂRI ȘI RĂSPUNSURI ALTERNATIV <i
-                                    class="fas fa-external-link-alt"></i></button>
-                        <p>
-                    </ul>
-                </div>
-                <div class="description" id="ki-assistent-description">
-                    <h3>Asistent KI</h3>
-                    <p>Asistentul KI este pregătit să te ajute cu toate întrebările despre MPU.</p>
-                    <button class="button"
-                        onclick="window.open('https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom', '_blank')">DESCHIDE
-                        ASISTENT KI <i class="fas fa-external-link-alt"></i></button>
-                    <p>
-                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg"
-                            alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
-                    <p>
-               </a>
-              <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
-              <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
-               </a>
-             </div>
-                <div class="description" id="gutachtersimulator-description">
-                    <h3>Simulator MPU</h3>
-                    <p>
-                    <p>Simulare a unei discuții MPU.</p>
-                        <button class="button" onclick="window.open('https://chatgpt.com/g/g-6780e4e94a788191bea7bdb6f863695a-asistentdinamiccostinel', '_blank')">DESCHIDE SIMULATOR1 KI <i class="fas fa-external-link-alt"></i></button>
-       <p>
-                     <button class="button"
-                        onclick="window.open('https://chatgpt.com/g/g-67647a1f4a488191940c4b0c92a4f2ea-k-i-kommandant-fur-mpu-abstinenz', '_blank')">DESCHIDE
-                        SIMULATOR2 KI <i class="fas fa-external-link-alt"></i></button>
-                    <p>
-                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/ppTJoMZMeGPnTtdZU3_79.jpg"
-                            alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
-                    <p>
-                    <p>CUM FOLOSEȘTI SIMULATORUL:</p>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/CHATBOTAIROM/', '_blank')">CUM
-                            FOLOSEȘTI SIMULATORUL! <i class="fas fa-external-link-alt"></i></button></p>
-                    <iframe src="https://zaha175.github.io/CHATBOTAIROM/"></iframe>
-                    <p>
-                </div>
-                <div class="description" id="wissen-description">
-                    <h3>MPU QUIZ ȘI JOCURI</h3>
-                    <p>MPU QUIZ : Testează-ți cunoștințele despre MPU.</p>
-
-                    <p>ÎNCEPE QUIZUL1</p>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/MPUQUIZCOSTINEL/', '_blank')">ÎNCEPE
-                            QUIZUL1 <i class="fas fa-external-link-alt"></i></button></p>
-
-                    <p>ÎNCEPE QUIZUL2</p>
-                    <p><button class="button" onclick="window.open('https://zaha175.github.io/MPUQUIZRom2/', '_blank')">ÎNCEPE QUIZUL2 <i class="fas fa-external-link-alt"></i></button></p>
-
-
-                    <p>ÎNCEPE QUIZUL3</p>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/QUIZSUPERTOLLROM/', '_blank')">ÎNCEPE
-                            QUIZUL3 <i class="fas fa-external-link-alt"></i></button></p>
-                    <iframe src="https://zaha175.github.io/QUIZSUPERTOLLROM/"></iframe>
-
-                    <p>MPU JOCURI : Testează-ți cunoștințele despre MPU.</p>
-
-                    <p>ÎNCEPE JOCUL1</p>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/JOC1COSTINEL/', '_blank')">ÎNCEPE
-                            JOCUL1 <i class="fas fa-external-link-alt"></i></button></p>
-
-                    <p>ÎNCEPE JOCUL2</p>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/JOC2ROM/', '_blank')">ÎNCEPE JOCUL2
-                            <i class="fas fa-external-link-alt"></i></button></p>
-                    <iframe src="https://zaha175.github.io/JOC2ROM/"></iframe>
-
-                     <p>ÎNCEPE JOCUL3</p>
-    <p><button class="button" onclick="window.open('https://zaha175.github.io/JOC3ROM/', '_blank')">ÎNCEPE JOCUL3 <i class="fas fa-external-link-alt"></i></button></p>
-                </div>
-                <div class="description" id="frageboegen-description">
-                    <h3>Chestionare MPU</h3>
-                    <p>Exerciții și chestionare pentru MPU.</p>
-                    <p><button class="button"
-                            onclick="window.open('https://gamma.app/docs/Chestionare-MPU-jqrbicoiikh83o2', '_blank')">VEZI
-                            CHESTIONARE <i class="fas fa-external-link-alt"></i></button>
-                    <p>
-                        <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/QstBoB9fZaPTGSfbm4vm9.jpg"
-                            alt="Fiecare zi este o luptă!" style="width: 100%; height: auto;">
-                    <p>
-             </a>
-              <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
-              <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
-               </a>
-              </div>
-                <div class="description" id="header-description">
-                    <h3>Bine ai venit pe PLATFORMA MPU</h3>
-                    <div class="video-container">
-                   <video controls width="100%">
-                  <source src="VIDEOROM.mp4" type="video/mp4">
-                  Dein Browser unterstützt das Video-Tag nicht.
-        </video>
-             </div>
-              <p>Apasă pe elementele din meniu, ca să afli mai multe informații.</p>
-              </a>
-              <a href="https://chatgpt.com/g/g-675d7bdf5d60819192be6d2b1a5145b2-mpu-asistent-rom" target="_blank">
-              <img src="https://cdn.gamma.app/fhpleqvbjim2f32/generated-images/Bx81A5Ct9oOUsc7eE0UWu.jpg" alt="Alternativtext" style="width: 200px; height: auto;">
-               </a>
-             </div>
-                <div class="description" id="promille-rechner-description">
+           <div class="description" id="promille-rechner-description">
                     <h3>Calculator de Alcoolemie</h3>
                     <p>Calculator de consum de alcool cu diagramă</p>
                     <iframe src="https://zaha175.github.io/ALCOOLCONSUMCALC/"></iframe>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/ALCOOLCONSUMCALC/', '_blank')">Calculator
-                            de consum de alcool cu diagramă <i class="fas fa-external-link-alt"></i></button></p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/ALCOOLCONSUMCALC/', '_blank')">Calculator de consum de alcool cu diagramă <i class="fas fa-external-link-alt"></i></button>
                     <p>Calculator de alcoolemie cu diagramă</p>
                     <iframe src="https://zaha175.github.io/CALCULATORDEALCOOL/"></iframe>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/CALCULATORDEALCOOL/', '_blank')">Calculator
-                            de alcoolemie cu diagramă <i class="fas fa-external-link-alt"></i></button></p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/CALCULATORDEALCOOL/', '_blank')">Calculator de alcoolemie cu diagramă <i class="fas fa-external-link-alt"></i></button>
                     <p>Calculator de vârstă</p>
                     <iframe src="https://zaha175.github.io/CALCULATOR-DE-VARSTA/"></iframe>
-                    <p><button class="button"
-                            onclick="window.open('https://zaha175.github.io/CALCULATOR-DE-VARSTA/', '_blank')">Calculator
-                            de vârstă <i class="fas fa-external-link-alt"></i></button></p>
+                    <button class="button" onclick="window.open('https://zaha175.github.io/CALCULATOR-DE-VARSTA/', '_blank')">Calculator de vârstă <i class="fas fa-external-link-alt"></i></button>
                 </div>
             </div>
         </main>
@@ -842,36 +746,28 @@
         <button class="modal-close" onclick="closeModal()">X</button>
         <div id="modal-body"></div>
     </div>
-
     <script>
         function openModal(category) {
-            console.log("Opening modal for category:", category);
             const modal = document.getElementById('modal-content');
             const modalBody = document.getElementById('modal-body');
             const description = document.getElementById(`${category}-description`);
-
             if (description) {
-                modalBody.innerHTML = description.innerHTML; // Inhalt in das Modal laden
+                modalBody.innerHTML = description.innerHTML;
                 modal.classList.add('active');
                 document.querySelector('.modal-overlay').classList.add('active');
             } else {
                 console.error(`Beschreibung für Kategorie ${category} nicht gefunden`);
             }
         }
-
-        /* Modal und Overlay schließen */
         function closeModal() {
             document.querySelector('.modal-overlay').classList.remove('active');
             document.getElementById('modal-content').classList.remove('active');
-            document.getElementById('modal-body').innerHTML = ''; // Modal-Inhalt leeren
+            document.getElementById('modal-body').innerHTML = '';
         }
-
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
         }
-
-        // Lade Dark-Mode beim Start
         window.onload = () => {
             if (localStorage.getItem('darkMode') === 'true') {
                 document.body.classList.add('dark-mode');
@@ -881,16 +777,75 @@
                 container.style.display = container.style.display === 'none' ? 'flex' : 'none';
                 document.getElementById('chat-response').innerText = 'Chatbot-ul nu este disponibil în prezent. Vă rugăm să încercați din nou mai târziu.';
             };
-
-            // Chatbot deaktiviert – Platzhalterantwort
             document.getElementById('send-btn').onclick = () => {
                 document.getElementById('chat-response').innerText = 'Chatbot-ul nu este disponibil în prezent. Vă rugăm să încercați din nou mai târziu.';
-            }
-
+            };
         };
-
+        // Aktualisierung der Systemstatus-Anzeige
+        const systemLogElement = document.getElementById('systemLog');
+        const cpuUsageEl = document.getElementById('cpuUsage');
+        const ramUsageEl = document.getElementById('ramUsage');
+        const hostStatusEl = document.getElementById('hostStatus');
+        function getRandomUsage() {
+            return Math.floor(Math.random() * 100) + 1; 
+        }
+        function updateSystemStatus() {
+            let cpuUsage = getRandomUsage();
+            let ramUsage = getRandomUsage();
+            cpuUsageEl.innerText = `Utilizare CPU: ${cpuUsage}%`;
+            ramUsageEl.innerText = `Utilizare RAM: ${ramUsage}%`;
+            let hostStatus = (cpuUsage > 80 || ramUsage > 80) ? '⚠️ Suprasolicitat' : '✅ Stabil';
+            hostStatusEl.innerText = `Stare Host: ${hostStatus}`;
+            let logEntry = document.createElement('p');
+            logEntry.classList.add('new-entry');
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            if (hours < 10) hours = '0' + hours;
+            if (minutes < 10) minutes = '0' + minutes;
+            logEntry.textContent = `[${hours}:${minutes}] CPU: ${cpuUsage}%, RAM: ${ramUsage}%, Stare: ${hostStatus}`;
+            systemLogElement.appendChild(logEntry);
+            systemLogElement.scrollTop = systemLogElement.scrollHeight;
+        }
+        setInterval(updateSystemStatus, 3000);
+        // Three.js
+        const threejsContainer = document.getElementById('threejs-container');
+        const width = threejsContainer.clientWidth;
+        const height = threejsContainer.clientHeight;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(width, height);
+        threejsContainer.appendChild(renderer.domElement);
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const hostSphere = new THREE.Mesh(geometry, material);
+        scene.add(hostSphere);
+        camera.position.z = 5;
+        function animate() {
+            requestAnimationFrame(animate);
+            hostSphere.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+        setInterval(() => {
+            let randomCPU = getRandomUsage();
+            hostSphere.material.color.set(randomCPU > 80 ? 0xff0000 : 0x00ff00);
+        }, 3000);
+        // Tab-Funktionalität
+        const tabButtons = document.querySelectorAll('.sidebar button');
+        const tabSections = document.querySelectorAll('.tab-section');
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                let targetTab = btn.getAttribute('data-tab');
+                tabSections.forEach(sec => {
+                    sec.classList.remove('active');
+                    if (sec.id === targetTab) {
+                        sec.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
-
 </body>
-
 </html>
